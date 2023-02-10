@@ -22,3 +22,6 @@ img {
     padding: 10px;
 }
 
+.wrapper {
+    grid-auto-flow: dense;
+}

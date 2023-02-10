@@ -9,11 +9,11 @@ for (let task of parsedData) {
 
     document.getElementById('first').innerHTML += `
     <div>
-        <div class="card p-4 ">
+        <div class="card p-4 item">
             <img src=${task.image} class="card-img-top" alt="${task.description}">
                 <div class="card-body">
                 <h3 class="card-title">${task.task_name}</h3>
-                <p class="card-text" style="border-bottom: 1px solid gray; height: 8rem; padding: 2rem 0">${task.description}</p>
+                <p class="card-text" style="border-bottom: 1px solid gray; height:5rem">${task.description}</p>
                 <p class="card-text">Location: ${task.location}</p>
                 <p class="card-text">Duration: ${task.duration} minutes</p>
                 <div class="d-flex justify-content-around align-items-center mb-4" >
@@ -34,18 +34,18 @@ for (let task of parsedData) {
 }
 
 
-// Button selectors
+// Selectors
 let btnSuccess = document.querySelectorAll('.btn-success')
 let btnDanger = document.querySelectorAll('.btn-danger')
 let btnSecondary = document.querySelectorAll('.btn-secondary')
 let btnWarning = document.querySelectorAll('.btn-warning')
 let prio = document.querySelectorAll('.prio')
+let cardItem = document.querySelectorAll('.item')
 
-
-//Adding events on buttons
+// Adding events on buttons
 for (let i = 0; i < btnSuccess.length; i++) {
 
-    //Button for incrementation
+    // Button for incrementation
     btnSuccess[i].addEventListener('click', () => {
 
         parsedData[i].priority++
@@ -56,7 +56,7 @@ for (let i = 0; i < btnSuccess.length; i++) {
 
     })
 
-    //Button for decrementing
+    // Button for decrementing
     btnDanger[i].addEventListener('click', () => {
 
         parsedData[i].priority--
@@ -66,13 +66,13 @@ for (let i = 0; i < btnSuccess.length; i++) {
         disable(i)
     })
 
-    //Button checked
+    // Button checked
     btnSecondary[i].addEventListener('click', () => {
         
         completed(i)
     })
 
-    //Remove Button
+    // Remove Button
     btnWarning[i].addEventListener('click', () => {
         remove(i)
     })
@@ -111,7 +111,7 @@ function disable(param) {
 }
 
 
-//Changing color on the button if the task is completed
+// Changing color on the button if the task is completed
 function completed(param) {
     btnSecondary[param].classList.add('btn-primary')
     btnSecondary[param].classList.remove('btn-secondary')
@@ -119,7 +119,7 @@ function completed(param) {
 }
 
 
-//Deleting tasks
+// Deleting tasks
 function remove(param) {
-    btnWarning[param].style.visibility = 'hidden'
+    cardItem[param].style.display = 'none'
 }
