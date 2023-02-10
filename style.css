@@ -25,3 +25,8 @@ img {
 .wrapper {
     grid-auto-flow: dense;
 }
+
+* {
+    transition: 300ms all ease-in-out
+}
+

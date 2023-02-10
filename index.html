@@ -14,7 +14,7 @@
     />
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   </head>
-  <body class="container">
+  <body>
     <header>
       <nav class="navbar navbar-expand-lg bg-body-tertiary p-4 mb-3">
         <div class="container-fluid">
@@ -58,11 +58,12 @@
       </nav>
     </header>
 
-    <main>
+    <main class="mb-5">
       <div class="backgroundPhoto">
         <h1 class="text">To do list</h1>
       </div>
       <section class="container">
+        <i id="sort" class="material-icons">sort</i>
         <div
           class="row row-cols-1 row-cols-md-2 row-cols-lg-3 justify-content-around wrapper"
           id="first"
@@ -71,7 +72,9 @@
       </section>
     </main>
 
-    <footer></footer>
+    <footer class="bg-secondary p-3 container-fluid text-center" id="foot">
+        <h3>Nenad Vasiljev 2023 @ CodeFactory</h3>
+    </footer>
 
     <script type="module" src="js.js"></script>
     <script
