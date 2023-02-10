@@ -3,3 +3,22 @@ img {
     height: 15rem;
     object-fit: cover;
 }
+
+.backgroundPhoto {
+    height: 15rem;
+    background-image: url(https://images.unsplash.com/photo-1586281380117-5a60ae2050cc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: grid;
+    place-content: center;
+    margin-bottom: 2rem;
+}
+
+.text {
+    font-size: 3rem;
+    background-color: rgba(0, 0, 0, 0.541);
+    color: white;
+    padding: 10px;
+}
+
