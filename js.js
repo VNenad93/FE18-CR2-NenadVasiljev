@@ -35,7 +35,6 @@ for (let task of parsedData) {
     </div>`
 }
 
-
 // Selectors
 const btnSuccess = document.querySelectorAll('.btn-success')
 const btnDanger = document.querySelectorAll('.btn-danger')
@@ -128,18 +127,6 @@ function removeItem(param) {
     cardCont.removeChild(cardItem[param])
 }
 
-
-// Sort button event
-sort.addEventListener('click', () => {
-
-    for (let i = 0; i < parsedData.length; i++) {
-        const sorted = parsedData[i].priority
-
-        console.log(sorted.sort(compareNumbers))
-
-    }
-})
-
 // Sort button event
 sort.addEventListener('click', () => {
     parsedData.sort((a, b) => b.priority - a.priority)
@@ -170,4 +157,6 @@ sort.addEventListener('click', () => {
             </div>
         </div>`
     }
+
 })
+
