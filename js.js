@@ -3,13 +3,15 @@ import data from './data.js';
 //parsed data
 const parsedData = JSON.parse(data)
 
+//Container selected
+let cardCont = document.getElementById('first')
 
 //Dinamicly printed data based on the template below
 for (let task of parsedData) {
 
-    document.getElementById('first').innerHTML += `
-    <div>
-        <div class="card p-4 item">
+    cardCont.innerHTML += `
+    <div class="item">
+        <div class="card p-4">
             <img src=${task.image} class="card-img-top" alt="${task.description}">
                 <div class="card-body">
                 <h3 class="card-title">${task.task_name}</h3>
@@ -74,7 +76,7 @@ for (let i = 0; i < btnSuccess.length; i++) {
 
     // Remove Button
     btnWarning[i].addEventListener('click', () => {
-        remove(i)
+        removeItem(i)
     })
 }
 
@@ -120,6 +122,6 @@ function completed(param) {
 
 
 // Deleting tasks
-function remove(param) {
-    cardItem[param].style.display = 'none'
+function removeItem(param) {
+    cardCont.removeChild(cardItem[param])
 }
