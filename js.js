@@ -1,39 +1,41 @@
-import data from './data.js';
+// Parsed data
+const parsedData = JSON.parse(localStorage.getItem('Data'))
 
-//parsed data
-const parsedData = JSON.parse(data)
-
-//Container selected
+// Container selected
 let cardCont = document.getElementById('first')
 
-//Dinamicly rendered data based on the template below
-for (let task of parsedData) {
+// Dinamicly rendered data based on the template below
+function renderData() {
+    for (let task of parsedData) {
 
-    cardCont.innerHTML += `
-    <div class="item">
-        <div class="card p-4">
-            <img src=${task.image} class="card-img-top" alt="${task.description}">
-                <div class="card-body">
-                <h3 class="card-title">${task.task_name}</h3>
-                <p class="card-text" style="border-bottom: 1px solid gray; height:5rem">${task.description}</p>
-                <p class="card-text">Location: ${task.location}</p>
-                <p class="card-text">Duration: ${task.duration} minutes</p>
-                <div class="d-flex justify-content-around align-items-center mb-4" >
-                    <h4 class="flex-grow-1 prio text-success">Priority: ${task.priority}</h4>
-                    <a class="btn btn-success" style="width: 3rem; margin-right: 1rem"><h4>+</h4></a>
-                    <a class="btn btn-danger disabled" style="width: 3rem"><h4>-</h4></a>
-                </div>
-                <div class="d-grid gap-2">
-                <button class="btn btn-secondary d-flex justify-content-center">Completed</button>
-                <button class="btn btn-warning d-flex justify-content-center" >
-                        Delete
-                        <i class="material-icons">delete</i>
-                        </button>
+        cardCont.innerHTML += `
+        <div class="item">
+            <div class="card p-4">
+                <img src=${task.image} class="card-img-top" alt="${task.description}">
+                    <div class="card-body">
+                    <h3 class="card-title">${task.task_name}</h3>
+                    <p class="card-text" style="border-bottom: 1px solid gray; height:5rem">${task.description}</p>
+                    <p class="card-text">Location: ${task.location}</p>
+                    <p class="card-text">Duration: ${task.duration} minutes</p>
+                    <div class="d-flex justify-content-around align-items-center mb-4" >
+                        <h4 class="flex-grow-1 prio text-success">Priority: ${task.priority}</h4>
+                        <a class="btn btn-success" style="width: 3rem; margin-right: 1rem"><h4>+</h4></a>
+                        <a class="btn btn-danger disabled" style="width: 3rem"><h4>-</h4></a>
+                    </div>
+                    <div class="d-grid gap-2">
+                    <button class="btn btn-secondary d-flex justify-content-center">Completed</button>
+                    <button class="btn btn-warning d-flex justify-content-center" >
+                            Delete
+                            <i class="material-icons">delete</i>
+                            </button>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>`
+        </div>`
+    }
 }
+
+renderData()
 
 // Selectors
 const btnSuccess = document.querySelectorAll('.btn-success')
@@ -42,7 +44,6 @@ const btnSecondary = document.querySelectorAll('.btn-secondary')
 const btnWarning = document.querySelectorAll('.btn-warning')
 const prio = document.querySelectorAll('.prio')
 const cardItem = document.querySelectorAll('.item')
-const foot = document.getElementById('foot')
 const sort = document.getElementById('sort')
 
 // Adding events on buttons
@@ -53,6 +54,7 @@ for (let i = 0; i < btnSuccess.length; i++) {
 
         parsedData[i].priority++
         prio[i].innerHTML = `Priority: ${parsedData[i].priority}`
+        localStorage.setItem
 
         color(i)
         disable(i)
@@ -130,33 +132,5 @@ function removeItem(param) {
 // Sort button event
 sort.addEventListener('click', () => {
     parsedData.sort((a, b) => b.priority - a.priority)
-    cardCont.innerHTML = ''
-    for (let task of parsedData) {
-        cardCont.innerHTML += `
-        <div class="item">
-            <div class="card p-4">
-                <img src=${task.image} class="card-img-top" alt="${task.description}">
-                    <div class="card-body">
-                    <h3 class="card-title">${task.task_name}</h3>
-                    <p class="card-text" style="border-bottom: 1px solid gray; height:5rem">${task.description}</p>
-                    <p class="card-text">Location: ${task.location}</p>
-                    <p class="card-text">Duration: ${task.duration} minutes</p>
-                    <div class="d-flex justify-content-around align-items-center mb-4" >
-                        <h4 class="flex-grow-1 prio text-success">Priority: ${task.priority}</h4>
-                        <a class="btn btn-success" style="width: 3rem; margin-right: 1rem"><h4>+</h4></a>
-                        <a class="btn btn-danger disabled" style="width: 3rem"><h4>-</h4></a>
-                    </div>
-                    <div class="d-grid gap-2">
-                    <button class="btn btn-secondary d-flex justify-content-center">Completed</button>
-                    <button class="btn btn-warning d-flex justify-content-center" >
-                            Delete
-                            <i class="material-icons">delete</i>
-                            </button>
-                    </div>
-                </div>
-            </div>
-        </div>`
-    }
-
+    renderData()
 })
-
