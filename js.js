@@ -1,5 +1,7 @@
+import data from './data.js' assert {}
+
 // Parsed data
-const parsedData = JSON.parse(localStorage.getItem('Data'))
+const parsedData = JSON.parse(data)
 
 // Container selected
 let cardCont = document.getElementById('first')
@@ -132,5 +134,5 @@ function removeItem(param) {
 // Sort button event
 sort.addEventListener('click', () => {
     parsedData.sort((a, b) => b.priority - a.priority)
-    renderData()
+    
 })

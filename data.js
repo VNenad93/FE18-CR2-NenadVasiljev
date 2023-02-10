@@ -73,5 +73,4 @@ let data = `[
 }
 ]`
 
-// Seting the data item to the local storage
-localStorage.setItem('Data', data)
+export default data
