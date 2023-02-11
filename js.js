@@ -152,6 +152,8 @@ function renderData(data) {
         const sorted = parsedData.sort((a, b) => b.priority - a.priority)
         cardCont.innerHTML = '';
 
+
+        // Calling the render data function with sorted elements as an argument
         renderData(sorted)
 
     });
