@@ -44,9 +44,9 @@ p {
     padding: .5rem 1rem;
     margin-bottom: 2rem;
     cursor: pointer;
-    position: relative;
+    /* position: relative; */
 }
-
+/* 
 .sortIcon:hover::after {
     transform: translateX(10px);
     content: 'Sort Items';
@@ -54,4 +54,4 @@ p {
     height: 100%;
     position: absolute;
     right: -80px;
-}
+} */
