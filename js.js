@@ -1,4 +1,4 @@
-import data from './data.js' assert { }
+import data from './data.js' 
 
 // Parsed data
 const parsedData = JSON.parse(data)

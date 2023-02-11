@@ -30,3 +30,6 @@ img {
     transition: 300ms all ease-in-out
 }
 
+.icon:hover {
+    transform: translateX(10px);
+}
