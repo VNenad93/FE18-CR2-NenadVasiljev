@@ -22,14 +22,36 @@ img {
     padding: 10px;
 }
 
-.wrapper {
-    grid-auto-flow: dense;
-}
-
 * {
-    transition: 300ms all ease-in-out
+    transition: 300ms all ease-in-out;
+    padding: 0;
+    margin: 0;
 }
 
-.icon:hover {
+p {
+    margin: 0;
+    padding: 0;
+}
+
+.sortIcon:hover {
     transform: translateX(10px);
+}
+
+.sortIcon {
+    width: max-content;
+    border-radius: 8px;
+    border: 2px solid gray;
+    padding: .5rem 1rem;
+    margin-bottom: 2rem;
+    cursor: pointer;
+    position: relative;
+}
+
+.sortIcon:hover::after {
+    transform: translateX(10px);
+    content: 'Sort Items';
+    width: 140%;
+    height: 100%;
+    position: absolute;
+    right: -80px;
 }

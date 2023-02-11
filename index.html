@@ -17,7 +17,13 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
     />
   </head>
-  <body style="display: flex; flex-direction: column; justify-content: space-between;">
+  <body
+    style="
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    "
+  >
     <header>
       <nav class="navbar navbar-expand-lg bg-body-tertiary p-4 mb-3">
         <div class="container-fluid">
@@ -66,12 +72,9 @@
         <h1 class="text">To do list</h1>
       </div>
       <section class="container">
-        <i
-          id="sort"
-          class="material-icons rounded icon"
-          style="border: 2px solid gray; padding: 0.5rem; cursor: pointer; margin-bottom: 2rem;"
-          >sort
-        </i>
+        <div class="sortIcon">
+          <i id="sort" class="material-icons">sort </i>
+        </div>
         <div
           class="row row-cols-1 row-cols-md-2 row-cols-lg-3 justify-content-around wrapper"
           id="first"
